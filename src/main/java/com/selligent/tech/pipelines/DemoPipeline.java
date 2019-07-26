@@ -84,7 +84,7 @@ public class DemoPipeline {
                             )
                 )
                 .accumulatingFiredPanes()
-                .withAllowedLateness(Duration.ZERO)
+                .withAllowedLateness(Duration.ZERO, Window.ClosingBehavior.FIRE_ALWAYS)
                 .withTimestampCombiner(TimestampCombiner.END_OF_WINDOW)
         );
 
